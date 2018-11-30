@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Tarea } from '../../models/tarea';
 
 /**
  * Generated class for the AddPage page.
@@ -13,13 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-add',
   templateUrl: 'add.html',
 })
+
 export class AddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	public tarea:Tarea;
+	public categoria: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddPage');
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+		this.tarea = new Tarea();
+		this.categoria = [ 'categoria1','categoria2', 'categoria3' ];
+		
+	}
+	
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad AddPage');
+	}
+	save(){
+		console.log(this.tarea);
+	}
 
 }

@@ -1,0 +1,36 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Tarea1",
+      "descripcion": "Esto descripcion",
+      "categoria": "categoria1",
+      "fecha": "12/01/2019",
+      "estado": 1
+    },
+    {
+      "id": "2",
+      "titulo": "Tarea2",
+      "descripcion": "Esto descripcion",
+      "categoria": "categoria1",
+      "fecha": "12/01/2019",
+      "estado": 0
+    },
+    {
+      "id": 3,
+      "titulo": "Tareamodificaada",
+      "descripcion": "Esto descripciomodificada",
+      "categoria": "categoria5",
+      "fecha": "12/01/2019",
+      "estado": 1
+    },
+    {
+      "id": 4,
+      "titulo": "Tarea5",
+      "descripcion": "Esto descripcio5",
+      "categoria": "categoria5",
+      "fecha": "12/01/2019",
+      "estado": 1
+    }
+  ]
+}

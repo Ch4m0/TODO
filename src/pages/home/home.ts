@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AddPage } from '../add/add';
+import { TareasServicioProvider } from '../../providers/tareas-servicio/tareas-servicio';
 
 @Component({
   selector: 'page-home',
@@ -8,51 +10,23 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 	public tareas:any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public tareasServicioProvider: TareasServicioProvider) {
 
-  	this.tareas = [
-  	{
-  		id: 1,
-  		titulo: 'Tarea1',
-  		descripcion:'Esto descripcion',
-  		categoria:'categoria1',
-  		fecha: '12/01/2019',
-  		estado: 1
-  	},
-  	{
-  		id: 2,
-  		titulo: 'Tarea2',
-  		descripcion:'Esto descripcion',
-  		categoria:'categoria1',
-  		fecha: '12/01/2019',
-  		estado: 0
-  	},
-  	{
-  		id:3,
-  		titulo: 'Tarea3',
-  		descripcion:'Esto descripcion',
-  		categoria:'categoria1',
-  		fecha: '12/01/2019',
-  		estado: 1
-
-  	},
-  	{
-  		id: 4,
-  		titulo: 'Tarea4',
-  		descripcion:'Esto descripcion',
-  		categoria:'categoria1',
-  		fecha: '12/01/2019',
-  		estado: 1
-
-  	}
-
-  	];
+  	this.tareasServicioProvider.getTareas()
+    .then(data => {
+      this.tareas = data;
+      console.log(data);
+    });
 
   	console.log(this.tareas)
   	console.log(this.tareas)
   	console.log(this.tareas)
   	console.log(this.tareas)
 
+  }
+  goAdd(){
+    console.log("entro");
+       this.navCtrl.push(AddPage);
   }
 
 }
