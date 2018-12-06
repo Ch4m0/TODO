@@ -10,15 +10,29 @@
  <table width="100%">
   <tr>
     <th>Tarea</th>
+    <th>Fecha</th>
     <th>-</th>
     <th>-</th>
     <th>-</th>
   </tr>
   <tr  *ngFor="let tarea of tareas;">
-  	<td>{{tarea.titulo}} </td>
-  	<td class="boton-list"> <ion-checkbox color="dark"></ion-checkbox></td>
-  	<td class="boton-list"><ion-icon name="create"></ion-icon></td>
-  	<td class="boton-list"><ion-icon name="trash"></ion-icon></td>
+
+  	<td class="valor">{{tarea.titulo}} </td>
+
+    <td class="valor">{{tarea.fecha}} </td>
+
+    <td class="boton-list valor"> 
+      <ion-checkbox color="dark"></ion-checkbox>
+    </td>
+
+  	<td class="boton-list valor">
+      <ion-icon name="create" (click) = "edit(tarea.id)" ></ion-icon>
+    </td>
+
+  	<td class="boton-list valor">
+      <ion-icon name="trash" (click) = "delete(tarea.id)"></ion-icon>
+    </td>
+
   </tr>
   
 </table>

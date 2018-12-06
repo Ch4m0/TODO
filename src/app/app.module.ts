@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
+
+import { EditPage } from '../pages/edit/edit';
+
 import { TareasServicioProvider } from '../providers/tareas-servicio/tareas-servicio';
 
 //librerías para http servicios
@@ -19,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
-    AddPage
+    AddPage,
+    EditPage
+
   ],
   imports: [
   BrowserModule,
@@ -31,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    AddPage
+    AddPage,
+    EditPage
   ],
   providers: [
     StatusBar,

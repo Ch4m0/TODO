@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { Tarea } from '../../models/tarea';
 import { Injectable } from '@angular/core';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 /*
   Generated class for the TareasServicioProvider provider.
@@ -29,4 +31,72 @@ export class TareasServicioProvider {
 
   }
 
+  getTarea(id){
+
+    return new Promise( resolve => {
+       this.http.get(this.apiUrl+'/tareas/'+id)
+      // this.http.get(this.apiUrl+`/tareas/${id}`)
+      .subscribe(
+        data =>{
+
+          resolve(data);
+
+        },
+        err => {
+
+        })
+    })
+  }
+
+
+  addTareas(tarea:any){
+
+    // let options = new RequestOptions({ headers: headers });
+
+    console.log(tarea, "tarea servicio");
+
+    return new Promise (resolve => {
+      this.http.post(this.apiUrl+'/tareas', tarea).subscribe(
+        data => {resolve(data);
+        }, 
+        err =>   {
+
+        })
+  })
+
+  }
+
+  modifyTareas(id,tarea:any){
+
+    // let options = new RequestOptions({ headers: headers });
+
+    console.log(tarea, "tarea servicio");
+
+    return new Promise (resolve => {
+      this.http.put(this.apiUrl+'/tareas/'+id, tarea).subscribe(
+        data => {resolve(data);
+        }, 
+        err =>   {
+
+        })
+    })
+
+  }
+
+  deleteTareas(id:any){
+
+    return new Promise(resolve => {
+
+      this.http.delete(this.apiUrl+'/tareas/'+id).subscribe(
+        data => {
+          resolve(data);
+        },
+        err => {
+
+        }
+        )
+
+    })
+
+  }
 }
